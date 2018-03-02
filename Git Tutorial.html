@@ -11855,16 +11855,66 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span><span class="n">git</span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!!</span>git config --list
 </pre></div>
 
 </div>
 </div>
 </div>
 
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt output_prompt">Out[2]:</div>
+
+
+
+
+<div class="output_text output_subarea output_execute_result">
+<pre>[&#39;user.name=Ben Travaglione&#39;,
+ &#39;user.email=ben@travaglione.com&#39;,
+ &#39;diff.jupyternotebook.command=git-nbdiffdriver diff&#39;,
+ &#39;merge.jupyternotebook.driver=git-nbmergedriver merge %O %A %B %L %P&#39;,
+ &#39;merge.jupyternotebook.name=jupyter notebook merge driver&#39;,
+ &#39;difftool.nbdime.cmd=git-nbdifftool diff &#34;$LOCAL&#34; &#34;$REMOTE&#34;&#39;,
+ &#39;difftool.prompt=false&#39;,
+ &#39;mergetool.nbdime.cmd=git-nbmergetool merge &#34;$BASE&#34; &#34;$LOCAL&#34; &#34;$REMOTE&#34; &#34;$MERGED&#34;&#39;,
+ &#39;mergetool.prompt=false&#39;,
+ &#39;diff.tool=meld&#39;,
+ &#39;difftool.meld.cmd=meld $LOCAL $REMOTE&#39;,
+ &#39;core.repositoryformatversion=0&#39;,
+ &#39;core.filemode=true&#39;,
+ &#39;core.bare=false&#39;,
+ &#39;core.logallrefupdates=true&#39;,
+ &#39;remote.origin.url=https://github.com/b-trav/GitTutorial.git&#39;,
+ &#39;remote.origin.fetch=+refs/heads/*:refs/remotes/origin/*&#39;,
+ &#39;branch.master.remote=origin&#39;,
+ &#39;branch.master.merge=refs/heads/master&#39;]</pre>
+</div>
+
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>You want to store your username and email address:</p>
+
+<pre><code>git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com</code></pre>
+
+</div>
+</div>
 </div>
 <div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
 </div>
@@ -11956,13 +12006,47 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Your branch is ahead of &#39;origin/master&#39; by 1 commit.
+  (use &#34;git push&#34; to publish your local commits)
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   Git Tutorial.html</span>
+	<span class="ansi-red-fg">modified:   Git Tutorial.ipynb</span>
+	<span class="ansi-red-fg">modified:   Git Tutorial.py</span>
+
+Untracked files:
+  (use &#34;git add &lt;file&gt;...&#34; to include in what will be committed)
+
+	<span class="ansi-red-fg">.gitignore</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -11977,10 +12061,10 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add Git*
 </pre></div>
 
 </div>
@@ -11992,20 +12076,192 @@ div#notebook {
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p>Committing files</p>
+<h2 id="Committing-files">Committing files<a class="anchor-link" href="#Committing-files">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -m <span class="s2">&quot;Initial commit of this repository. Committing the Jupyter notebook containing a tutorial about git.&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master b761bf1] Initial commit of this repository. Committing the Jupyter notebook containing a tutorial about git.
+ 3 files changed, 12501 insertions(+)
+ create mode 100644 Git Tutorial.html
+ create mode 100644 Git Tutorial.ipynb
+ create mode 100644 Git Tutorial.py
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<h2 id="Ignoring-files">Ignoring files<a class="anchor-link" href="#Ignoring-files">&#182;</a></h2>
+</div>
+</div>
+</div>
+<div class="cell border-box-sizing text_cell rendered"><div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>There are often files in git that you do not want versioned. These might include binary files from a compiler, unnecessary backup files, or sensitive files containing usernames or passwords.</p>
+<p>Jupyter creates a directory call <code>.ipynb_checkpoints/</code> which stores info about your current notebook. We do not need to version this file, so let's ignore it.</p>
+<p>We ignore files by simply listing them in a special file called <code>.gitignore</code>.</p>
 
 </div>
 </div>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span><span class="nb">echo</span> <span class="s2">&quot;.ipynb_checkpoints/&quot;</span> &gt;&gt; .gitignore
 </pre></div>
 
 </div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>cat .gitignore
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>.ipynb_checkpoints/
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git add .gitignore
+</pre></div>
+
+</div>
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[10]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git commit -m <span class="s2">&quot;Adding .gitignore file, and ignoring ipynb_checkpoints.&quot;</span>
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>[master 79d5818] Adding .gitignore file, and ignoring ipynb_checkpoints.
+ 1 file changed, 1 insertion(+)
+ create mode 100644 .gitignore
+</pre>
+</div>
+</div>
+
+</div>
+</div>
+
+</div>
+<div class="cell border-box-sizing code_cell rendered">
+<div class="input">
+<div class="prompt input_prompt">In&nbsp;[11]:</div>
+<div class="inner_cell">
+    <div class="input_area">
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git status
+</pre></div>
+
+</div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>On branch master
+Your branch is ahead of &#39;origin/master&#39; by 2 commits.
+  (use &#34;git push&#34; to publish your local commits)
+Changes not staged for commit:
+  (use &#34;git add &lt;file&gt;...&#34; to update what will be committed)
+  (use &#34;git checkout -- &lt;file&gt;...&#34; to discard changes in working directory)
+
+	<span class="ansi-red-fg">modified:   Git Tutorial.html</span>
+	<span class="ansi-red-fg">modified:   Git Tutorial.ipynb</span>
+	<span class="ansi-red-fg">modified:   Git Tutorial.py</span>
+
+no changes added to commit (use &#34;git add&#34; and/or &#34;git commit -a&#34;)
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12020,13 +12276,31 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[13]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git push origin master
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>Everything up-to-date
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 
@@ -12041,13 +12315,33 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
+<div class="prompt input_prompt">In&nbsp;[14]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython3"><pre><span></span> 
+<div class=" highlight hl-ipython3"><pre><span></span><span class="o">!</span>git pull origin master
 </pre></div>
 
 </div>
+</div>
+</div>
+
+<div class="output_wrapper">
+<div class="output">
+
+
+<div class="output_area">
+
+<div class="prompt"></div>
+
+
+<div class="output_subarea output_stream output_stdout output_text">
+<pre>From https://github.com/b-trav/GitTutorial
+ * branch            master     -&gt; FETCH_HEAD
+Already up-to-date.
+</pre>
+</div>
+</div>
+
 </div>
 </div>
 

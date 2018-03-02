@@ -31,11 +31,17 @@
 #  - OS X: open a terminal???
 #  - ChromsOS : In developer mode, type CLT-ALT-T
 
-# In[ ]:
+# In[2]:
 
 
-git 
+get_ipython().getoutput('git config --list')
 
+
+# You want to store your username and email address:
+# ```
+# git config --global user.name "John Doe"
+# git config --global user.email johndoe@example.com
+# ```
 
 # ## Github
 
@@ -71,42 +77,81 @@ git
 
 # ## Checking the status of a repository
 
-# In[ ]:
+# In[8]:
 
 
-
+get_ipython().system('git status')
 
 
 # ## Adding files
 
-# In[ ]:
+# In[4]:
 
 
+get_ipython().system('git add Git*')
 
 
+# ## Committing files
 
-# Committing files
-
-# In[ ]:
-
+# In[5]:
 
 
+get_ipython().system('git commit -m "Initial commit of this repository. Committing the Jupyter notebook containing a tutorial about git."')
+
+
+# ## Ignoring files
+
+# There are often files in git that you do not want versioned. These might include binary files from a compiler, unnecessary backup files, or sensitive files containing usernames or passwords.
+# 
+# Jupyter creates a directory call `.ipynb_checkpoints/` which stores info about your current notebook. We do not need to version this file, so let's ignore it.
+# 
+# We ignore files by simply listing them in a special file called `.gitignore`.
+# 
+
+# In[6]:
+
+
+get_ipython().system('echo ".ipynb_checkpoints/" >> .gitignore')
+
+
+# In[7]:
+
+
+get_ipython().system('cat .gitignore')
+
+
+# In[9]:
+
+
+get_ipython().system('git add .gitignore')
+
+
+# In[10]:
+
+
+get_ipython().system('git commit -m "Adding .gitignore file, and ignoring ipynb_checkpoints."')
+
+
+# In[11]:
+
+
+get_ipython().system('git status')
 
 
 # ## Pushing files
 
-# In[ ]:
+# In[13]:
 
 
-
+get_ipython().system('git push origin master')
 
 
 # ## Pulling files
 
-# In[ ]:
+# In[14]:
 
 
-
+get_ipython().system('git pull origin master')
 
 
 # ## Branches, merging and much more
